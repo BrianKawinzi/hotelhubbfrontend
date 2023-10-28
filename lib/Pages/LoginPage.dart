@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hotelhubb/Components/MyButton.dart';
 import 'package:hotelhubb/Components/NormalTF.dart';
 import 'package:hotelhubb/Components/PasswordTF.dart';
+import 'package:hotelhubb/Components/SquareTile.dart';
 
 
 class LoginScreen extends StatelessWidget {
@@ -107,8 +108,42 @@ class LoginScreen extends StatelessWidget {
                 const SizedBox(height: 50),
 
                 //google or apple sign in
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    //google  button
+                    SquareTile(imagepath: 'lib/assets/google.png'),
+
+                    SizedBox(width: 25),
+
+                    //apple button
+                    SquareTile(imagepath: 'lib/assets/apple.png'),
+                  ],
+                ),
 
                 //not a member register now text
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      'Don\'t have an account?',
+                      style: TextStyle(color: Colors.grey[700]),
+                    ),
+                    const SizedBox(width: 4),
+                    TextButton(
+                      onPressed: () {
+                        Navigator.of(context).pushNamed('/register');
+                      }, 
+                      child: const Text(
+                        'Register now',
+                        style: TextStyle(
+                          color: Colors.blue,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ],
+                )
               ],
             ),
           ),
