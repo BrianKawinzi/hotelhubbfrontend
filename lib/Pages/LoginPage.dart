@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:hotelhubb/Components/NormalTF.dart';
+import 'package:hotelhubb/Components/PasswordTF.dart';
 
 
 class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
+
+  //text editing controllers
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
+  LoginScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -25,10 +31,40 @@ class LoginScreen extends StatelessWidget {
                 const SizedBox(height: 25),
 
                 //username textfield
+                NormalTF(
+                  controller: emailController, 
+                  hintText: 'Enter your Email', 
+                  obscureText: false
+                ),
+                 const SizedBox(height: 10),
 
                 //password textfield
+                PasswordTF(
+                  controller: passwordController, 
+                  hintText: 'Enter your Password'
+                ),
+                 const SizedBox(height: 10),
 
                 //forgot password text
+                GestureDetector(
+                  onTap: () {
+                    Navigator.of(context).pushNamed('/forgot');
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Text(
+                          'Forgot Password?',
+                          style: TextStyle(color: Colors.grey[600]),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+
+                 const SizedBox(height: 25),
 
                 //signin  button
 

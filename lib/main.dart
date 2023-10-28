@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hotelhubb/Pages/ForgotPassword.dart';
 import 'package:hotelhubb/Pages/LoginPage.dart';
 import 'package:hotelhubb/Pages/SplashScreen.dart';
 
@@ -19,6 +20,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/splash':(context) => SplashScreen(),
         '/login':(context) => LoginScreen(),
+        '/forgot':(context) => ForgotPassword(),
       },
       
     );
