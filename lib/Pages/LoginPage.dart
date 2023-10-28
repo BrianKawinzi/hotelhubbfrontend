@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hotelhubb/Components/MyButton.dart';
 import 'package:hotelhubb/Components/NormalTF.dart';
 import 'package:hotelhubb/Components/PasswordTF.dart';
 
@@ -8,6 +9,9 @@ class LoginScreen extends StatelessWidget {
   //text editing controllers
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
+
+  //sign user in method
+  void signUserIn() {}
   LoginScreen({super.key});
 
   @override
@@ -67,8 +71,40 @@ class LoginScreen extends StatelessWidget {
                  const SizedBox(height: 25),
 
                 //signin  button
+                MyButton(
+                  onTap: signUserIn, 
+                  buttonText: "Login"
+                ),
+                 const SizedBox(height: 50),
 
                 //or continue with
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: Divider(
+                          thickness: 0.5,
+                          color: Colors.grey[400],
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                        child: Text(
+                          'Or continue with',
+                          style: TextStyle(color: Colors.grey[700]),
+                        ),
+                      ),
+                      Expanded(
+                        child: Divider(
+                          thickness: 0.5,
+                          color: Colors.grey[400],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(height: 50),
 
                 //google or apple sign in
 
