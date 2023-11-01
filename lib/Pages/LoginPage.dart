@@ -4,9 +4,7 @@ import 'package:hotelhubb/Components/NormalTF.dart';
 import 'package:hotelhubb/Components/PasswordTF.dart';
 import 'package:hotelhubb/Components/SquareTile.dart';
 
-
 class LoginScreen extends StatelessWidget {
-
   //text editing controllers
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
@@ -37,18 +35,16 @@ class LoginScreen extends StatelessWidget {
 
                 //username textfield
                 NormalTF(
-                  controller: emailController, 
-                  hintText: 'Enter your Email', 
-                  obscureText: false
-                ),
-                 const SizedBox(height: 10),
+                    controller: emailController,
+                    hintText: 'Enter your Email',
+                    obscureText: false),
+                const SizedBox(height: 10),
 
                 //password textfield
                 PasswordTF(
-                  controller: passwordController, 
-                  hintText: 'Enter your Password'
-                ),
-                 const SizedBox(height: 10),
+                    controller: passwordController,
+                    hintText: 'Enter your Password'),
+                const SizedBox(height: 10),
 
                 //forgot password text
                 GestureDetector(
@@ -69,14 +65,12 @@ class LoginScreen extends StatelessWidget {
                   ),
                 ),
 
-                 const SizedBox(height: 25),
+                const SizedBox(height: 25),
+                //new changes
 
                 //signin  button
-                MyButton(
-                  onTap: signUserIn, 
-                  buttonText: "Login"
-                ),
-                 const SizedBox(height: 50),
+                MyButton(onTap: signUserIn, buttonText: "Login"),
+                const SizedBox(height: 50),
 
                 //or continue with
                 Padding(
@@ -133,7 +127,7 @@ class LoginScreen extends StatelessWidget {
                     TextButton(
                       onPressed: () {
                         Navigator.of(context).pushNamed('/register');
-                      }, 
+                      },
                       child: const Text(
                         'Register now',
                         style: TextStyle(
@@ -149,8 +143,6 @@ class LoginScreen extends StatelessWidget {
           ),
         ),
       ),
-
-      
     );
   }
 }
