@@ -3,8 +3,14 @@ import 'package:hotelhubb/Pages/ForgotPassword.dart';
 import 'package:hotelhubb/Pages/LoginPage.dart';
 import 'package:hotelhubb/Pages/RegisterPage.dart';
 import 'package:hotelhubb/Pages/SplashScreen.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
 }
 
